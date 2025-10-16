@@ -3,59 +3,33 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Abdi maulana ahmad | Portfolio</title>
-  <link rel="stylesheet" href="style.css">
+  <title>Move with Keys</title>
+  <style>
+    #box {
+      width: 50px;
+      height: 50px;
+      background: blue;
+      position: absolute;
+      top: 100px;
+      left: 100px;
+    }
+  </style>
 </head>
 <body>
-  <header>
-    <h1>Abdi maulana ahmad</h1>
-    <p class="subtitle">Game Developer | Backend Enthusiast | Learner</p>
-  </header>
+  <div id="box"></div>
 
-  <section id="about">
-    <h2>About Me</h2>
-    <p>
-      Hi! I'm <strong>Your Name</strong>, a passionate developer who loves building
-      <em>games, bots, and backend systems</em>. My goal is to keep learning and create
-      projects that connect hardware with software.
-    </p>
-  </section>
+  <script>
+    const box = document.getElementById('box');
+    let x = 100, y = 100;
 
-  <section id="projects">
-    <h2>Projects</h2>
-    <div class="project">
-      <h3>⚔️ 2D Platformer Game</h3>
-      <p>A procedural endless-runner platformer with loot, stamina, and chunk generation.</p>
-      <p><strong>Tech:</strong> Python, Pygame</p>
-      <a href="https://github.com/yourusername/platformer" target="_blank">View on GitHub</a>
-    </div>
-
-    <div class="project">
-      <h3>🤖 Discord Soundboard Bot</h3>
-      <p>Customizable bot with hotkeys, volume control, and transparency UI.</p>
-      <p><strong>Tech:</strong> JavaScript, Node.js</p>
-      <a href="https://github.com/yourusername/soundboard-bot" target="_blank">View on GitHub</a>
-    </div>
-  </section>
-
-  <section id="skills">
-    <h2>Skills</h2>
-    <ul>
-      <li><strong>Programming:</strong> Python, Java, JavaScript, C++</li>
-      <li><strong>Tools:</strong> Pygame, Flask, Git, Arduino</li>
-      <li><strong>Soft Skills:</strong> Problem-solving, Collaboration, Creativity</li>
-    </ul>
-  </section>
-
-  <section id="contact">
-    <h2>Contact</h2>
-    <p>Email: <a href="mailto:your.email@example.com">your.email@example.com</a></p>
-    <p>GitHub: <a href="https://github.com/yourusername" target="_blank">github.com/yourusername</a></p>
-    <p>Discord: YourDiscord#1234</p>
-  </section>
-
-  <footer>
-    <p>© 2025 Your Name. All rights reserved.</p>
-  </footer>
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'ArrowUp') y -= 10;
+      if (e.key === 'ArrowDown') y += 10;
+      if (e.key === 'ArrowLeft') x -= 10;
+      if (e.key === 'ArrowRight') x += 10;
+      box.style.left = x + 'px';
+      box.style.top = y + 'px';
+    });
+  </script>
 </body>
 </html>
