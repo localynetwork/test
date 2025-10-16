@@ -3,33 +3,18 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Move with Keys</title>
-  <style>
-    #box {
-      width: 50px;
-      height: 50px;
-      background: blue;
-      position: absolute;
-      top: 100px;
-      left: 100px;
-    }
-  </style>
+  <title>AOS Scroll Animation</title>
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 </head>
-<body>
-  <div id="box"></div>
+<body style="height:200vh; display:flex; flex-direction:column; align-items:center; gap:200px;">
 
+  <div data-aos="fade-up" style="width:100px;height:100px;background:lightblue;"></div>
+  <div data-aos="zoom-in" style="width:100px;height:100px;background:lightgreen;"></div>
+  <div data-aos="flip-left" style="width:100px;height:100px;background:orange;"></div>
+
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
   <script>
-    const box = document.getElementById('box');
-    let x = 100, y = 100;
-
-    document.addEventListener('keydown', (e) => {
-      if (e.key === 'ArrowUp') y -= 10;
-      if (e.key === 'ArrowDown') y += 10;
-      if (e.key === 'ArrowLeft') x -= 10;
-      if (e.key === 'ArrowRight') x += 10;
-      box.style.left = x + 'px';
-      box.style.top = y + 'px';
-    });
+    AOS.init();
   </script>
 </body>
 </html>
