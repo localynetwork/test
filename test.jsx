@@ -6,7 +6,7 @@ function app() {
   <div>
   <parallax pages = {4}>
 
-    <parallaxlayer>
+    <parallaxlayer>e
     <h2>test</h2>
     </parallaxlayer>
 
